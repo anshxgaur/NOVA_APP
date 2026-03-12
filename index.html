@@ -1,0 +1,274 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Nova Villain Interface</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+overflow:hidden;
+background-color:#000;
+color:#00eaff;
+font-family:'Orbitron',sans-serif;
+}
+
+.top-left,.top-right,.top-center{
+position:absolute;
+top:15px;
+font-size:1.2rem;
+z-index:10;
+}
+
+.top-left{left:30px;}
+.top-right{right:30px;}
+
+.top-center{
+left:50%;
+transform:translateX(-50%);
+font-size:1.1rem;
+text-shadow:0 0 6px #00eaff66;
+}
+
+.date-display{
+position:absolute;
+top:45px;
+left:50%;
+transform:translateX(-50%);
+font-size:.8rem;
+color:#00ff88;
+text-shadow:0 0 4px #00ff8866;
+z-index:10;
+}
+
+.container{
+width:100vw;
+height:100vh;
+position:relative;
+background:radial-gradient(circle at center,#01010a 20%,#000 80%);
+overflow:hidden;
+}
+
+canvas{
+position:absolute;
+top:0;
+left:0;
+z-index:0;
+}
+
+.orb-ring{
+position:absolute;
+top:50%;
+left:50%;
+width:400px;
+height:400px;
+border:2px dashed #00eaff33;
+border-radius:50%;
+transform:translate(-50%,-50%);
+animation:spinRing 20s linear infinite;
+z-index:1;
+}
+
+@keyframes spinRing{
+0%{transform:translate(-50%,-50%) rotate(0deg);}
+100%{transform:translate(-50%,-50%) rotate(360deg);}
+}
+
+.glow-circle{
+position:absolute;
+width:240px;
+height:240px;
+border-radius:50%;
+background:radial-gradient(circle at center,#00eaff 30%,#003344 90%);
+box-shadow:0 0 50px rgba(0,234,255,.8),0 0 80px rgba(0,234,255,.4);
+z-index:3;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+animation:breathe 4s ease-in-out infinite;
+}
+
+@keyframes breathe{
+0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.8;}
+50%{transform:translate(-50%,-50%) scale(1.1);opacity:1;}
+}
+
+#radarCanvas{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:300px;
+height:300px;
+border-radius:50%;
+opacity:.3;
+z-index:2;
+}
+
+.audio-bars{
+position:absolute;
+bottom:120px;
+display:flex;
+gap:6px;
+left:50%;
+transform:translateX(-50%);
+z-index:10;
+}
+
+.bar{
+width:6px;
+height:20px;
+background:#00eaff;
+animation:pulse 1s infinite alternate;
+}
+
+.bar:nth-child(2){animation-delay:.1s;}
+.bar:nth-child(3){animation-delay:.2s;}
+.bar:nth-child(4){animation-delay:.3s;}
+.bar:nth-child(5){animation-delay:.4s;}
+
+@keyframes pulse{
+0%{height:10px;opacity:.4;}
+100%{height:40px;opacity:1;}
+}
+
+.command-center{
+position:absolute;
+bottom:50px;
+left:50%;
+transform:translateX(-50%);
+z-index:10;
+text-align:center;
+}
+
+.command-input{
+width:280px;
+padding:10px;
+border:1px solid #00eaff;
+background:rgba(0,0,0,.7);
+color:#00eaff;
+font-family:'Orbitron';
+outline:none;
+text-align:center;
+box-shadow:0 0 10px #00eaff66;
+}
+
+.command-output{
+margin-top:8px;
+font-size:.9rem;
+color:#00ff88;
+height:18px;
+}
+
+.quote{
+position:absolute;
+bottom:20px;
+font-size:1.3rem;
+color:#ff002b;
+text-align:center;
+width:100%;
+z-index:10;
+text-shadow:0 0 8px rgba(255,0,43,.7);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="top-left">NOVA INTERFACE v2.0</div>
+<div class="top-center" id="liveClock">00:00:00</div>
+<div class="date-display" id="liveDate"></div>
+<div class="top-right">SECURE LINK</div>
+
+<canvas id="particlesCanvas"></canvas>
+<canvas id="radarCanvas" width="300" height="300"></canvas>
+
+<div class="orb-ring"></div>
+<div class="glow-circle"></div>
+
+<div class="audio-bars">
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+</div>
+
+<div class="quote">I AM NOVA AND YOU HAVE ENTERED MY WORLD</div>
+
+<div class="command-center">
+<input id="novaInput" class="command-input" placeholder="ENTER COMMAND">
+<div id="novaOutput" class="command-output"></div>
+</div>
+
+</div>
+
+<script>
+
+/* Clock */
+
+function updateClock(){
+const now=new Date()
+document.getElementById('liveClock').textContent=
+now.toLocaleTimeString('en-IN',{hour12:false})
+
+document.getElementById('liveDate').textContent=
+now.toDateString()+" IST"
+}
+
+setInterval(updateClock,1000)
+updateClock()
+
+/* Command -> Flask Backend */
+
+const input=document.getElementById("novaInput")
+const output=document.getElementById("novaOutput")
+
+input.addEventListener("keydown",function(e){
+
+if(e.key==="Enter"){
+
+const cmd=input.value
+
+output.innerText="Nova: Processing..."
+
+fetch("/command",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+command:cmd
+})
+})
+
+.then(res=>res.json())
+.then(data=>{
+output.innerText="Nova: "+data.response
+})
+
+.catch(()=>{
+output.innerText="Nova: Connection error"
+})
+
+input.value=""
+
+}
+
+})
+
+</script>
+
+</body>
+</html>
+```
