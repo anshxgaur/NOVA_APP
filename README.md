@@ -1,6 +1,9 @@
+![](assets/Bottom_up.svg)
+
 <p align="center">
-  <img src="hello.png" width="100%">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&weight=700&size=50&duration=3000&pause=1000&color=00BFFF&center=true&vCenter=true&width=1000&lines=Hi,+there!+I'm+NOVA;Your+Personal+A.I.+Assistant" alt="Typing SVG">
 </p>
+
 
 <h1 align="center">🚀 NOVA AI</h1>
 
