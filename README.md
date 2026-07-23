@@ -1,6 +1,6 @@
 # 🚀 NOVA AI
 <p align="center">
-  <img src="timeline/schedule/hello.png" alt="VISTA" width="100%">
+  <img src="hello.png"  width="100%">
 </p>
 
 ## Personal AI Assistant with Memory, Voice, Automation, and Edge-First AI Routing
