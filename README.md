@@ -14,7 +14,10 @@
   <img src="https://img.shields.io/badge/License-MIT-1E7A3D?style=for-the-badge">
 </p>
 
-![](assets/banner/Twitter header.jpg)
+<p align="center">
+  <img src="assets/banner/header.jpg" alt="Header Banner" width="100%">
+</p>
+
 <p align="center">
   <a href="#-what-is-nova">What is NOVA?</a> •
   <a href="#-key-features">Features</a> •
