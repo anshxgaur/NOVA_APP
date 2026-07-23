@@ -14,7 +14,7 @@
   <img src="https://img.shields.io/badge/License-MIT-1E7A3D?style=for-the-badge">
 </p>
 
-![](assets/banner/evil_banner)
+![](assets/banner/Twitter header.jpg)
 
 <p align="center">
   <a href="#-what-is-nova">What is NOVA?</a> •
