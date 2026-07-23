@@ -1,12 +1,9 @@
-<p align="center">
-  <img src="hello.png" width="100%">
-</p>
-
-<h1 align="center">🚀 NOVA AI</h1>
+![](assets/Bottom_up.svg)
 
 <p align="center">
-  <b>Your Personal AI Assistant — with Memory, Voice, Automation, and Edge-First Intelligence</b>
+  <img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&weight=700&size=50&duration=3000&pause=1000&color=00BFFF&center=true&vCenter=true&width=1000&lines=Hi,+there!+I'm+NOVA;Your+Personal+A.I.+Assistant" alt="Typing SVG">
 </p>
+
 
 <p align="center">
   <img src="https://img.shields.io/badge/Frontend-React%20%2B%20TypeScript-61DAFB?style=for-the-badge&logo=react&logoColor=white">
@@ -14,7 +11,12 @@
   <img src="https://img.shields.io/badge/AI-Groq%20%7C%20Ollama-F26522?style=for-the-badge">
   <img src="https://img.shields.io/badge/Memory-ChromaDB-6B2FA0?style=for-the-badge">
   <img src="https://img.shields.io/badge/Database-SQLite-4479A1?style=for-the-badge&logo=sqlite&logoColor=white">
-  <img src="https://img.shields.io/badge/License-MIT-1E7A3D?style=for-the-badge">
+</p>
+
+---
+
+<p align="center">
+  <img src="assets/banner/header.jpg" alt="Header Banner" width="100%">
 </p>
 
 <p align="center">
@@ -286,9 +288,6 @@ Once Ollama is running locally, NOVA automatically switches to it whenever Groq 
 ## 🎥 Demo
 
 <p align="center">
-  <a href="https://drive.google.com/file/d/1LQvjQurzuNe3QyqzRPicC-9EJ66fqtaJ/view?usp=drive_link">
-    <img src="https://img.shields.io/badge/▶️%20Watch%20the%20Demo%20Video-red?style=for-the-badge">
-  </a>
   <a href="https://github.com/anshxgaur/NOVA">
     <img src="https://img.shields.io/badge/⭐%20View%20on%20GitHub-black?style=for-the-badge&logo=github">
   </a>
@@ -296,18 +295,61 @@ Once Ollama is running locally, NOVA automatically switches to it whenever Groq 
 
 <br>
 
-## 👥 Team
-
 <p align="center">
-Ansh Gaur &nbsp;•&nbsp; Abhinav Roy &nbsp;•&nbsp; Apoorva Shukla &nbsp;•&nbsp; Ankit Shukla
+<a href="https://drive.google.com/file/d/1LQvjQurzuNe3QyqzRPicC-9EJ66fqtaJ/view?usp=drive_link">
+<img src="assets/gifs/click_it" width="75%">
+</a>
 </p>
 
-<br>
+<h2>👥 Team</h2>
 
-## 📄 License
+<table align="center">
+<tr>
+<td align="center">
 
-Released under the [MIT License](./LICENSE).
+<a href="https://www.linkedin.com/in/ansh-gaur-46b7a4378/">
+<img src="https://github.com/anshxgaur.png" width="90px;" alt="Ansh"/><br>
+<b>Ansh Gaur</b>
+</a>
+
+</td>
+
+<td align="center">
+
+<a href="www.linkedin.com/in/abhinav-roy-">
+<img src="https://github.com/Abhinav-Roy-01.png" width="90px;" alt="Abhinav"/><br>
+<b>Abhinav Roy</b>
+</a>
+
+</td>
+
+<td align="center">
+
+<a href="https://www.linkedin.com/in/apoorvashukla9091/">
+<img src="https://github.com/apoorva-s9091.png" width="90px;" alt="Apoorva"/><br>
+<b>Apoorva Shukla</b>
+</a>
+
+</td>
+
+<td align="center">
+
+<a href="https://www.linkedin.com/in/ankit-shukla-877705285/">
+<img src="https://github.com/AnkitShukla-arch.png" width="90px;" alt="Ankit"/><br>
+<b>Ankit Shukla</b>
+</a>
+
+</td>
+
+</tr>
+</table>
+
+## 🏁 Conclusion
 
 <p align="center">
-  <sub>Built with ❤️ for a smarter, more personal AI experience.</sub>
+  <img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&weight=700&size=50&duration=3000&pause=1000&color=00BFFF&center=true&vCenter=true&width=1000&lines=Built+with+❤️;For+a+smarter+AI+experience" alt="Typing SVG">
+
+<p align="center">
+  <img src="assets/gifs/Animation Loop GIF by braindead.gif.gif" width="100%">
 </p>
+
