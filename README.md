@@ -15,6 +15,10 @@
 </p>
 
 <p align="center">
+  <img src="assets/gifs/200.webp" alt="Banner" width="100%">
+</p>
+
+<p align="center">
   <a href="#-what-is-nova">What is NOVA?</a> •
   <a href="#-key-features">Features</a> •
   <a href="#️-system-architecture">Architecture</a> •
