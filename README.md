@@ -11,7 +11,6 @@
   <img src="https://img.shields.io/badge/AI-Groq%20%7C%20Ollama-F26522?style=for-the-badge">
   <img src="https://img.shields.io/badge/Memory-ChromaDB-6B2FA0?style=for-the-badge">
   <img src="https://img.shields.io/badge/Database-SQLite-4479A1?style=for-the-badge&logo=sqlite&logoColor=white">
-  <img src="https://img.shields.io/badge/License-MIT-1E7A3D?style=for-the-badge">
 </p>
 
 ---
